@@ -109,8 +109,8 @@ ALTER TABLE Usuario ADD aniversario_usu DATE;
 
 INSERT INTO Usuario(nome_usu, data_cadastro, email_usu, aniversario_usu) VALUES 
 ("Gabriel de Oliveira Silva", "2024-03-12", "gabriel.oliveira.s177@gmail.com", "2004-09-26"),
-("Filipe Maciel Lopes", "2024-03-12", "filipemaciellopes01@gmail.com" "2003-09-20"),
-("Vinícius de Oliveira Pinheiro", "2024-03-12", "pinheiro.v@estudante.ifro.edu.br" "1994-10-01"),
+("Filipe Maciel Lopes", "2024-03-12", "filipemaciellopes01@gmail.com", "2003-09-20"),
+("Vinícius de Oliveira Pinheiro", "2024-03-12", "pinheiro.v@estudante.ifro.edu.br", "1994-10-01"),
 ("Guilherme Maciel de Assunção", "2024-03-12", "guilherme.assuncao@estudante.ifro.edu.br", "2004-10-02"),
 ("Daniel Cristian Amorim Rocha", "2024-03-12", "danielcristian0706@gmail.com", "2004-06-07"),
 ("João Pedro Gundim Guimarães", "2024-03-12", "joaopedrogundimg@gmail.com", "2005-03-05"),
@@ -121,5 +121,28 @@ INSERT INTO Usuario(nome_usu, data_cadastro, email_usu, aniversario_usu) VALUES
 ("Sunamita Santos Nascimento", "2024-03-12", "mymytasu@outlook.com", "2000-11-05"),
 ("Ana Beatriz Tomaz de Sá", "2024-03-12", "anabeatrizts.12@gmail.com", "2003-12-12"),
 ("Lucayan Felipe Teixeira da Silva", "2024-03-12", "lucayanfelips@hotmail.com", "2000-02-18"),
-("")
-;
+("Patrick Macêdo Felicio", "2024-03-12", "patrickmacedofeliceo@gmail.com", "2004-09-30"),
+("Théo Teodoro Novais", "2024-03-12", "theotn12@gmail.com", "2005-01-20"),
+("Vitor dos Reis Eugenio", "2024-03-12", "vitorreiseugenio@gmail.com", "2003-04-18"),
+("Renan da Rocha Santos", "2024-03-12", "renanro919@gmail.com", "2004-04-28"),
+("Eloizy Campi Reis", "2024-03-12", "campieloizy80@gmail.com", "2004-09-09"),
+("Elizeu Silva de Freitas", "2024-03-12", "elizeubbb@gmail.com", "2004-06-02"),
+("João Carlos da Silva Andrade", "2024-03-12", "jeancarlos95279@gmail.com", "2004-11-25");
+
+ALTER TABLE Usuario ADD Sexo CHAR;
+ALTER TABLE Usuario Change Sexo sexo CHAR;
+
+UPDATE Usuario SET Sexo = 'M' WHERE id_usuario IN(1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 19, 20);
+UPDATE Usuario SET Sexo = 'F' WHERE id_usuario IN(10, 11, 12, 18);
+
+SELECT * FROM Usuario WHERE Sexo = 'F';
+SELECT * FROM Usuario WHERE nome_usu LIKE 'A%';
+SELECT * FROM Usuario WHERE nome_usu LIKE '%S';
+SELECT * FROM Usuario WHERE nome_usu LIKE '%Z%';
+SELECT * FROM Usuario WHERE id_usuario BETWEEN 5 AND 15;
+
+ALTER TABLE Usuario ADD tipo_usu BOOL;
+
+UPDATE Usuario SET tipo_usu = true WHERE tipo_usu IS NULL;
+
+SELECT * FROM Usuario WHERE tipo_usu IS NOT NULL;
